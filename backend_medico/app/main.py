@@ -1,7 +1,5 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-from typing import Optional
-from datetime import datetime
+from app.api.v1.endpoints import consultas
 
 # Crear la instancia de la aplicación
 app = FastAPI(
@@ -9,24 +7,9 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Modelo Pydantic para validar los datos de entrada de una consulta
-class ConsultaMedica(BaseModel):
-    paciente_id: int
-    motivo_consulta: str
-    diagnostico: str
-    receta_notas: Optional[str] = None
+# Incluimos los módulos/rutas usando prefijos claros
+app.include_router(consultas.router, prefix="/api/v1/consultas", tags=["Consultas Médicas"])
 
-# Ruta de prueba
 @app.get("/")
-def inicio():
-    return {"mensaje": "Bienvenido al Backend del Consultorio Médico"}
-
-# Endpoint POST para registrar una nueva consulta
-@app.post("/consultas/")
-def registrar_consulta(consulta: ConsultaMedica):
-    # Aquí iría la lógica para guardar en la Base de Datos
-    return {
-        "estado": "Consulta registrada exitosamente",
-        "fecha_registro": datetime.now(),
-        "datos": consulta
-    }
+def root():
+    return {"mensaje": "API Médica Operativa"}
