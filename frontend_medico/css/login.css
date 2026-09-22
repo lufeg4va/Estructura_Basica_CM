@@ -1,0 +1,106 @@
+:root {
+    --color-primario: #0284c7; /* Azul médico */
+    --color-primario-oscuro: #0369a1;
+    --color-fondo: #f0f9ff;
+    --color-texto: #334155;
+    --color-borde: #cbd5e1;
+    --color-error: #ef4444;
+    --blanco: #ffffff;
+    --fuente-principal: system-ui, -apple-system, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.contenedor-login {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.tarjeta-login {
+    background-color: var(--blanco);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.cabecera-login {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cabecera-login h1 {
+    color: var(--color-primario);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.cabecera-login p {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.campo-formulario {
+    margin-bottom: 1.5rem;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.campo-formulario input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.campo-formulario input:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+}
+
+.mensaje-error {
+    color: var(--color-error);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    min-height: 1.2rem;
+    text-align: center;
+}
+
+.boton-ingresar {
+    width: 100%;
+    background-color: var(--color-primario);
+    color: var(--blanco);
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-ingresar:hover {
+    background-color: var(--color-primario-oscuro);
+}

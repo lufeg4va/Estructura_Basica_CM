@@ -1,0 +1,35 @@
+<!--=====INICIO DE SEION=====-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Médico | Sistema de Gestión</title>
+    <!-- Vinculación del archivo CSS -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <main class="contenedor-login">
+        <section class="tarjeta-login">
+            <header class="cabecera-login">
+                <h1>Acceso Médico</h1>
+                <p>Ingrese sus credenciales para continuar</p>
+            </header>
+            <form id="formulario-login" aria-label="Formulario de inicio de sesión">
+                <div class="campo-formulario">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" name="correo" placeholder="doctor@clinica.com" required aria-required="true">
+                </div>
+                <div class="campo-formulario">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena" placeholder="••••••••" required aria-required="true">
+                </div>
+                <div id="mensaje-error" class="mensaje-error" role="alert" aria-live="assertive"></div>
+                <button type="submit" class="boton-ingresar">Iniciar Sesión</button>
+            </form>
+        </section>
+    </main>
+    <!-- Vinculación del archivo JavaScript -->
+    <script src="js/auth.js"></script>
+</body>
+</html>
